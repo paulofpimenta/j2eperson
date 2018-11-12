@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="container">
+  <h2>Person operations</h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#menuAdd">Add person</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menuList">List all</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menuChange">Change a person</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menuDelete">Delete a person</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="menuAdd" class="container tab-pane active"><br>
+      <h3>Add</h3>
+      <p>Add Person</p>
+      
+     <form action="PersonController" method="post">
+ 		<div class="form-group col-3">
+ 			<h2 class="text-center">Person Form</h2>
+ 		</div>
+  
+  		<div class="form-group col-3">
+    		<label for="formGroupExampleInput">Name</label>
+    		<input type="text" class="form-control" id="inputName" placeholder="Name" name="name">
+  		</div>
+  
+  		<div class="form-group col-3">
+    		<label for="formGroupExampleInput2">Surname</label>
+    		<input type="text" class="form-control" id="inputNameSurname" placeholder="Surname" name="surname">
+  		</div>
+   		
+   		<div class="form-group col-3">
+    <label for="formGroupExampleInput2">Age</label>
+    <input type="number" class="form-control" id="inputAge" placeholder="Age" name="age">
+  </div>
+   <div class="form-group col-3">
+    <button type="submit" class="btn btn-primary">Send</button>
+     </div>
+</form>
+    </div>
+    
+    
+    <div id="menuList" class="container tab-pane fade"><br>
+      <h3>List</h3>
+      <p>List person</p>
+      <form action="ListPersonController" method="post">
+      	<button type="submit" class="btn btn-primary">List</button>
+      	
+      </form>	
+      <div id="viewTable"></div>
+    </div>
+    
+    <div id="menuChange" class="container tab-pane fade"><br>
+      <h3>Modify</h3>
+      <p>Change a person based on id</p>
+    </div>
+    
+    <div id="menuDelete" class="container tab-pane fade"><br>
+      <h3>Remove</h3>
+      <p>Remove person</p>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- SCRIPTS | PLACED HERE TO BE FASTER -->	
+
+	<script type="text/javascript" src="static/js/bootstrap.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="static/js/bootstrap.min.js"></script>
+	
+	<script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+   		$('.nav-tabs').tab();
+	});
+		
+		function loadList() {
+		    $('#content').load('personList.jsp');
+		}
+		
+	</script>
+
+</body>
+</html>
